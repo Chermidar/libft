@@ -1,4 +1,18 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/20 15:08:10 by chermida          #+#    #+#             */
+/*   Updated: 2022/06/20 15:08:32 by chermida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stddef.h>
 
 // Part 1
 // is_x()
@@ -58,3 +72,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 */
+
+#endif
