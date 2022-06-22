@@ -16,3 +16,6 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
+/*
+Convierte una letra c minuscula a mayuscula si es posible
+*/

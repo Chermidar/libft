@@ -12,16 +12,22 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nelem, size_t elsize)
 {
 	void	*ret;
 	size_t	sum;
 
-	sum = size * nmemb;
-	if (size != 0 && sum / size != nmemb)
+	sum = elsize * nelem;
+	if (elsize != 0 && sum / elsize != nelem)
 		return (NULL);
 	ret = malloc(sum);
 	if (ret)
-		ft_bzero(ret, nmemb * size);
+		ft_bzero(ret, nelem * elsize);
 	return (ret);
 }
+/*
+Asigna memoria para una matriz de elementos nelem de bytes de tamaño cad uno
+y devuelve un untero a la memoria asignada. La memoria se pone a cero.
+Si nelem o elsize es 0, entonces calloc devuelve NULL o un valor de puntero
+único que luego se puede pasar con éxito a free()
+*/

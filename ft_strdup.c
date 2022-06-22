@@ -26,3 +26,9 @@ char	*ft_strdup(const char *s)
 	ft_strlcpy(ret, s, size + 1);
 	return (ret);
 }
+/*
+Devuelve un puntero a la nueva cadena que es un 
+duplicado de la cadena s. La memoria para
+lla nueva cadena es se obtiene con malloc(),
+y se puede liberar con free()
+*/

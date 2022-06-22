@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:55:25 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/20 19:06:38 by chermida         ###   ########.fr       */
+/*   Updated: 2022/06/22 18:16:22 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+/*
+Llena los primeros n bytes del area de memoria señalado
+por s con el byte constante c
+*/

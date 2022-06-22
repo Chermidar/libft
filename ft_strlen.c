@@ -12,12 +12,16 @@
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *c)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (c[i])
+	while (s[i])
 		i++;
 	return (i);
 }
+/*
+Calcula la longitud de la cadena apuntada por s,
+exculyendo la terminación en el byte NULL.
+*/

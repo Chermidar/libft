@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:46:45 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/20 16:46:47 by chermida         ###   ########.fr       */
+/*   Updated: 2022/06/22 18:18:19 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)s + i);
 	return (NULL);
 }
+/*
+Devuelve un puntero a la última aparición del carácter c en
+la cadena s
+*/

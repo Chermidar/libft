@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	unsigned int	k;
 	unsigned int	j;
@@ -35,3 +35,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	dest[k + i] = 0;
 	return (j + k);
 }
+/*
+Agrega la cadena terminada en NULL src al final de dst. 
+Agregará como máximo el tamaño - strlen(dest) - 1 byte,
+el resultado terminado en NULL.
+*/

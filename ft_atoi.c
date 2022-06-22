@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	c;
 	int	s;
@@ -35,3 +35,8 @@ int	ft_atoi(const char *str)
 	}
 	return (nb * s);
 }
+/*
+Convierte la porción incial de un string apuntada por nptr a int
+tiene un comportamiento parecido a strtol(nptr, NULL, 10)
+exeptuando que atoi no detecta error
+*/

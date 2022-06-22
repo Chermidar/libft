@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:24:06 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/20 19:27:48 by chermida         ###   ########.fr       */
+/*   Updated: 2022/06/22 18:10:20 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)src + i);
 	return (NULL);
 }
+/*
+Esca ea los n bytes iniciales de la memoria en
+el area apuntada por s para la primera instancia de c.
+Tanto c como los bytes del area apuntada por s
+se interpretan como unsigned char.
+*/

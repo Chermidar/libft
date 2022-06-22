@@ -27,3 +27,6 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (NULL);
 }
+/*
+Develve un puntero a la primera aarición del carácter c en la cadena s
+*/
