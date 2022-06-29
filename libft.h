@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 // Part 1
 // is_x()
