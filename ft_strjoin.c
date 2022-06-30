@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:28:06 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/29 19:28:43 by chermida         ###   ########.fr       */
+/*   Updated: 2022/06/30 19:14:20 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	return (ret);
 }
+/*
+Reserva (con malloc(3)) y devuelve una nueva
+string, formada por la concatenación de ’s1’ y
+’s2’.
+*/

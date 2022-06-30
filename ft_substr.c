@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:24:36 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/29 19:28:41 by chermida         ###   ########.fr       */
+/*   Updated: 2022/06/30 19:14:01 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ft_strlcpy(ret, (s + start), len + 1);
 	return (ret);
 }
+/*
+Reserva (con malloc(3)) y devuelve una substring de
+la string ’s’.
+La substring empieza desde el índice ’start’ y
+tiene una longitud máxima ’len’.
+*/
