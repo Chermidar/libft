@@ -19,18 +19,18 @@ int	ft_atoi(const char *nptr)
 	nb = 0;
 	c = 0;
 	s = 1;
-	while ((str[c] >= 9
-			&& str[c] <= 13) || str[c] == 32)
+	while ((nptr[c] >= 9
+			&& nptr[c] <= 13) || nptr[c] == 32)
 		c++;
-	if (str[c] == 45 || str[c] == 43)
+	if (nptr[c] == 45 || nptr[c] == 43)
 	{
-		if (str[c] == 45)
+		if (nptr[c] == 45)
 			s *= -1;
 		c++;
 	}
-	while (str[c] >= 48 && str[c] <= 57)
+	while (nptr[c] >= 48 && nptr[c] <= 57)
 	{
-		nb = (str[c] - 48) + (nb * 10);
+		nb = (nptr[c] - 48) + (nb * 10);
 		c++;
 	}
 	return (nb * s);
