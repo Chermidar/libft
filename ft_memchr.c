@@ -6,9 +6,11 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:24:06 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/22 18:10:20 by chermida         ###   ########.fr       */
+/*   Updated: 2022/06/30 19:27:24 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

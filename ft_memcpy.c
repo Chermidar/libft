@@ -6,9 +6,11 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:20:15 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/22 18:38:44 by chermida         ###   ########.fr       */
+/*   Updated: 2022/06/30 19:28:35 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 {
@@ -17,7 +19,7 @@ void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 	char	*s;
 
 	i = 0;
-	d = (char *)dst;
+	d = (char *)dest;
 	s = (char *)src;
 	if (!dest || !src)
 		return (NULL);
@@ -26,7 +28,7 @@ void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 		d[i] = s[i];
 		i++;
 	}
-	return (dst);
+	return (dest);
 }
 /*
 Copia n bytes del area de memoria src al area
