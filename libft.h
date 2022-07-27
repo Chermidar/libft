@@ -16,6 +16,15 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+# define BASE_DEC	10
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+
 // Part 1
 // is_x()
 int		ft_isalpha(int c);
