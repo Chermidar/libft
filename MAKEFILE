@@ -41,10 +41,11 @@ NAME = libft.a
 CC = gcc
 RM = rm -rf
 
-CFLAGS = -Wall -Werror -Wextra -c
+CFLAGS = -Wall -Werror -Wextra
+ARFLAGS = rcs
 
 ${NAME}: ${OBJS}
-		 ${CC} -o ${NAME} ${OBJS}
+		 ${AR} ${ARFLAGS} $@ $^
 
 all: ${NAME}
 
