@@ -14,18 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	char	*i;
+	char	ch;
 
-	i = 0;
-	while (s[1])
-	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
-	}
-	if (!c && s[i] == '\0')
-		return ((char *)s + i);
-	return (NULL);
+	if (!s)
+		return (0);
+	ch = (char)c;
+	i = (char *)s;
+	while (*i && *i != ch)
+		++i;
+	if (ch && !*i)
+		return ((char *)0);
+	return (i);
 }
 /*
 Develve un puntero a la primera aarición del carácter c en la cadena s

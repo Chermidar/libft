@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:55:25 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/22 18:16:22 by chermida         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:22:27 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
+	size_t	i;
 	char	*str;
 
 	if (!s)
 		return (NULL);
+	i = 0;
 	str = (char *)s;
-	while (n > 0)
+	while (i < n)
 	{
-		str[n - 1] = c;
-		n--;
+		str[i] = c;
+		++i;
 	}
 	return (s);
 }

@@ -10,30 +10,51 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+static int	is_space(char c)
+{
+	return (c == '\t' || c == '\n' || c == '\v' || \
+			c == '\f' || c == '\r' || c == ' ');
+}
+
+static char	*skip_space(char *s)
+{
+	while (is_space(*s))
+		++s;
+	return (s);
+}
+
+static char	*skip_get_sign(char *s, int *sign)
+{
+	*sign = 1;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			*sign *= -1;
+		++s;
+	}
+	return (s);
+}
+
 int	ft_atoi(const char *nptr)
 {
-	int	c;
-	int	s;
-	int	nb;
+	char	*s;
+	int		ret;
+	int		sign;
 
-	nb = 0;
-	c = 0;
-	s = 1;
-	while ((nptr[c] >= 9
-			&& nptr[c] <= 13) || nptr[c] == 32)
-		c++;
-	if (nptr[c] == 45 || nptr[c] == 43)
+	if (!nptr)
+		return (0);
+	s = (char *)nptr;
+	ret = 0;
+	s = skip_space(s);
+	s = skip_get_sign(s, &sign);
+	while (ft_isdigit(*s))
 	{
-		if (nptr[c] == 45)
-			s *= -1;
-		c++;
+		ret = (ret * 10) + (*s - '0');
+		++s;
 	}
-	while (nptr[c] >= 48 && nptr[c] <= 57)
-	{
-		nb = (nptr[c] - 48) + (nb * 10);
-		c++;
-	}
-	return (nb * s);
+	return (ret * sign);
 }
 /*
 Convierte la porción incial de un string apuntada por nptr a int

@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:24:06 by chermida          #+#    #+#             */
-/*   Updated: 2022/11/01 12:43:13 by chermida         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:26:56 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*i;
 
 	if (!s)
-		return (NULL);
+			return (NULL);
 	ch = (unsigned char)c;
 	i = (unsigned char *)s;
 	while (n && *i != ch)

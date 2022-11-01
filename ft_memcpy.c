@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:20:15 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/30 19:28:35 by chermida         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:24:20 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
+	size_t		i;
+	char		*d;
+	const char	*s;
 
-	i = 0;
-	d = (char *)dest;
-	s = (char *)src;
 	if (!dest || !src)
-		return (NULL);
+		return (dest);
+	s = (const char *)src;
+	d = (char *)dest;
+	i = 0;
 	while (i < n)
 	{
 		d[i] = s[i];
-		i++;
+		++i;
 	}
 	return (dest);
 }
