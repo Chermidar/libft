@@ -12,28 +12,62 @@
 
 #include "libft.h"
 
-char    *ft_itoa(int    n)
+static int	count_digit(long n)
 {
-	char	*str;
+	int	i;
 
-	if (!(str = (char *)malloc(sizeof(char) * 2)))
-		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(str, "-2147483648"));
-	if (n < 0)
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n)
 	{
-		str[0] = '-';
-		str[1] = '\0';
-		str = ft_strjoin(str, ft_itoa(-n));
+		n /= BASE_DEC;
+		++i;
 	}
-	else if (n >= 10)
-		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
-	else if (n < 10 && n >= 0)
+	return (i);
+}
+
+static void	rec(long n, char *buff)
+{
+	if (n / BASE_DEC)
 	{
-		str[0] = n + '0';
-		str[1] = '\0';
+		rec(n / BASE_DEC, buff - 1);
+		rec(n % BASE_DEC, buff);
 	}
-	return (str);
+	if (n < BASE_DEC)
+		*buff = n + '0';
+}
+
+static void	get_sign(long *nbr, int *sign, int *digit)
+{
+	if (*nbr < 0)
+	{
+		*nbr *= -1;
+		*sign = -1;
+		++(*digit);
+	}
+}
+
+char	*ft_itoa(int n)
+{
+	char	*ret;
+	long	nbr;
+	int		sign;
+	int		digit;
+
+	nbr = (long)n;
+	sign = 1;
+	digit = count_digit(nbr);
+	get_sign(&nbr, &sign, &digit);
+	ret = (char *)malloc(sizeof(char) * (digit + 1));
+	if (ret)
+	{
+		ret[digit] = 0;
+		if (sign == -1)
+			ret[0] = '-';
+		rec(nbr, (ret + digit - 1));
+	}
+	return (ret);
 }
 /*
 Utilizando malloc(3), genera una string que

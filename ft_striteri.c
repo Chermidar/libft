@@ -22,6 +22,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 		f(i, (s + i));
 		++i;
 	}
+}
 /*
 A cada carácter de la string ’s’, aplica la función
 ’f’ dando como parámetros el índice de cada
