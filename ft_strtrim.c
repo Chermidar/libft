@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 18:40:16 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/30 19:22:52 by chermida         ###   ########.fr       */
+/*   Updated: 2022/11/07 07:48:21 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	get_start(char const *s, char const *set)
 
 	i = 0;
 	while (s[i] && ft_strchr(set, s[i]))
-		i++;
+		++i;
 	return (i);
 }
 
