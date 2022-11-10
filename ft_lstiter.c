@@ -6,7 +6,17 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:57:09 by chermida          #+#    #+#             */
-/*   Updated: 2022/11/07 14:57:13 by chermida         ###   ########.fr       */
+/*   Updated: 2022/11/10 21:57:23 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
+}
