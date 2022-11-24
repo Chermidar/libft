@@ -12,26 +12,26 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	dest_len;
-	unsigned int	src_len;
-	unsigned int	i;
+	size_t	i;
+	size_t	src_len;
+	size_t	dest_len;
 
-	dest_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
+	if ((!dest || !src) && size == 0)
+		return (0);
 	i = 0;
-	if (dest_len > size)
+	src_len = ft_strlen(src);
+	dest_len = ft_strlen(dest);
+	if (dest_len >= size)
 		return (src_len + size);
-	if (size == 0)
-		return (src_len);
-	while (src[i] && (i + dest_len + 1) < size)
+	while (src[i] && dest_len + i < size - 1)
 	{
-		dst[dest_len + i] = src[i];
-		++i;
+		dest[dest_len + i] = src[i];
+		i++;
 	}
-	dst[dest_len + i] = 0;
-	return (src_len + dest_len);
+	dest[dest_len + i] = '\0';
+	return (dest_len + src_len);
 }
 /*
 Agrega la cadena terminada en NULL src al final de dst. 

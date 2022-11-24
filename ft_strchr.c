@@ -12,20 +12,18 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	char	*i;
-	char	ch;
+	int	i;
 
-	if (!s)
-		return (0);
-	ch = (char)c;
-	i = (char *)s;
-	while (*i && *i != ch)
-		++i;
-	if (ch && !*i)
-		return ((char *)0);
-	return (i);
+	i = 0;
+	while (str[i] != (unsigned char)c)
+	{
+		if (str[i] == '\0')
+			return (NULL);
+		i++;
+	}
+	return ((char *)&str[i]);
 }
 /*
 Develve un puntero a la primera aarición del carácter c en la cadena s

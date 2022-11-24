@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:24:06 by chermida          #+#    #+#             */
-/*   Updated: 2022/11/01 18:26:56 by chermida         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:12:28 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	ch;
-	unsigned char	*i;
+	unsigned char	*arr;
+	size_t			i;
 
-	if (!s)
-			return (NULL);
-	ch = (unsigned char)c;
-	i = (unsigned char *)s;
-	while (n && *i != ch)
+	i = 0;
+	arr = (unsigned char *)s;
+	while (i < n)
 	{
-		++i;
-		--n;
+		if (arr[i] == (unsigned char)c)
+			return ((unsigned char *)&arr[i]);
+		i++;
 	}
-	if (!n)
-		return (0);
-	return (i);
+	return (0);
 }
 /*
 Esca ea los n bytes iniciales de la memoria en

@@ -12,19 +12,17 @@
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *s1)
 {
-	int		size;
-	char	*ret;
+	char	*cpy;
+	size_t	s1_len;
 
-	if (!s)
+	s1_len = ft_strlen(s1);
+	cpy = malloc(sizeof(char) * s1_len + 1);
+	if (!cpy)
 		return (NULL);
-	size = ft_strlen(s);
-	ret = (char *)malloc(sizeof(char) * (size + 1));
-	if (!ret)
-		return (NULL);
-	ft_strlcpy(ret, s, size + 1);
-	return (ret);
+	ft_strlcpy(cpy, s1, s1_len + 1);
+	return (cpy);
 }
 /*
 Devuelve un puntero a la nueva cadena que es un 

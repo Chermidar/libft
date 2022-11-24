@@ -6,7 +6,7 @@
 /*   By: chermida <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:28:16 by chermida          #+#    #+#             */
-/*   Updated: 2022/06/22 18:15:14 by chermida         ###   ########.fr       */
+/*   Updated: 2022/11/23 16:11:20 by chermida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*c;
-	const char	*s;
+	const char	*src_cpy;
+	char		*dest_cpy;
 
-	if (!dest || !src)
+	src_cpy = (const char *)src;
+	dest_cpy = (char *)dest;
+	if (dest == '\0' && src == '\0')
 		return (NULL);
 	if (dest < src)
-		return (ft_memcpy(dest, src, n));
-	c = (char *)dest;
-	s = (const char *)src;
-	while (n)
+		ft_memcpy(dest, src, n);
+	else
 	{
-		--n;
-		c[n] = s[n];
+		while (n)
+		{
+			dest_cpy[n - 1] = src_cpy[n - 1];
+			n--;
+		}
 	}
 	return (dest);
 }

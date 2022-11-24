@@ -12,10 +12,13 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
-# include <stdlib.h>
+
 # include <stdio.h>
+# include <string.h>
+# include <ctype.h>
+# include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 # define BASE_DEC	10
 

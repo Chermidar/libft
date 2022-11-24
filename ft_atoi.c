@@ -13,49 +13,37 @@
 #include "libft.h"
 
 static int	is_space(char c)
-{
-	return (c == '\t' || c == '\n' || c == '\v' || \
-			c == '\f' || c == '\r' || c == ' ');
+{	
+	return (c == ' ' || (c >= 9 && c <= 13));
 }
 
-static char	*skip_space(char *s)
+int	ft_atoi(const char *str)
 {
-	while (is_space(*s))
-		++s;
-	return (s);
-}
-
-static char	*skip_get_sign(char *s, int *sign)
-{
-	*sign = 1;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			*sign *= -1;
-		++s;
-	}
-	return (s);
-}
-
-int	ft_atoi(const char *nptr)
-{
-	char	*s;
-	int		ret;
+	size_t	i;
+	size_t	ret;
 	int		sign;
 
-	if (!nptr)
-		return (0);
-	s = (char *)nptr;
+	i = 0;
 	ret = 0;
-	s = skip_space(s);
-	s = skip_get_sign(s, &sign);
-	while (ft_isdigit(*s))
+	sign = 1;
+	while (is_space(str[i]))
+		i++;
+	if (str[i] == '-')
+		sign *= -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (ft_isdigit(str[i]))
 	{
-		ret = (ret * 10) + (*s - '0');
-		++s;
+		ret = (ret * 10) + (str[i] - '0');
+		if (ret > LONG_MAX && sign == -1)
+			return (0);
+		if (ret > LONG_MAX && sign == 1)
+			return (-1);
+		i++;
 	}
 	return (ret * sign);
 }
+
 /*
 Convierte la porción incial de un string apuntada por nptr a int
 tiene un comportamiento parecido a strtol(nptr, NULL, 10)
