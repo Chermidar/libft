@@ -28,7 +28,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-
 // Part 1
 // is_x()
 int		ft_isalpha(int c);
